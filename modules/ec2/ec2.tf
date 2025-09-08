@@ -1,9 +1,9 @@
 resource "aws_instance" "openproject" {
-  ami                    = "ami-0c02fb55956c7d316"
+  ami                    = "ami-00ca32bbc84273381"
   instance_type          = "t2.medium"
   subnet_id              = var.subnet_id
   key_name               = var.key_name
-  security_group_ids     = var.security_group_ids
+  security_group_ids     = var.ec2_sg
 
   user_data = <<-EOF
               #!/bin/bash
