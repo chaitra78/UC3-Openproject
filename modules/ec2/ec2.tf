@@ -3,7 +3,7 @@ resource "aws_instance" "openproject" {
   instance_type          = "t2.medium"
   subnet_id              = var.subnet_id
   key_name               = var.key_name
-  vpc_security_group_ids = var.ec2_sg_id
+  vpc_security_group_ids = var.security_group_ids
 
 
   user_data = <<-EOF
