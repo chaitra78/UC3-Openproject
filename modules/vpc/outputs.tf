@@ -7,7 +7,7 @@ output "public_subnet_id" {
 }
 
 output "public_subnet_ids" {
-  value = [aws_subnet.public.id]
+  value = aws_subnet.public[*].id
 }
 
 output "ec2_sg_id" {
