@@ -2,9 +2,13 @@ provider "aws" {
   region = var.aws_region
 }
 
+
 module "vpc" {
-  source = "./modules/vpc"
+  source              = "./modules/vpc"
+  vpc_id              = aws_vpc.main.id
+  availability_zones  = ["us-east-1a", "us-east-1b"]  # Adjust based on your region
 }
+
 
 module "ec2" {
   source             = "./modules/ec2"
