@@ -19,7 +19,7 @@ module "ec2" {
 
 module "alb" {
   source             = "./modules/alb"
-  subnet_ids         = module.vpc.public_subnet_ids
+  subnet_ids         = module.vpc.public_subnet_id
   vpc_id             = module.vpc.vpc_id
   target_instance_id = module.ec2.instance_id
   ec2_sg_id          = module.vpc.ec2_sg_id
