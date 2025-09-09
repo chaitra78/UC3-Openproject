@@ -5,7 +5,7 @@ provider "aws" {
 
 module "vpc" {
   source              = "./modules/vpc"
-  vpc_id              = aws_vpc.main.id
+  vpc_id              = module.vpc.vpc_id
   availability_zones  = ["us-east-1a", "us-east-1b"]  # Adjust based on your region
 }
 

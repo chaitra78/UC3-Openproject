@@ -9,6 +9,8 @@ resource "aws_vpc" "main" {
 }
 
 
+
+
 resource "aws_subnet" "public" {
   for_each = { for idx, cidr in var.cidr_block : idx => cidr }
 
